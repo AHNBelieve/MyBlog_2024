@@ -16,7 +16,19 @@ const mockData = [
     id: 1,
     createdDate: new Date(),
     title: "레츠고쇼!",
-    content,
+    content: "응애",
+  },
+  {
+    id: 2,
+    createdDate: new Date(),
+    title: "레츠고쇼!",
+    content: "응애",
+  },
+  {
+    id: 3,
+    createdDate: new Date(),
+    title: "레츠고쇼!",
+    content: "응애",
   },
 ];
 
@@ -29,7 +41,8 @@ function reducer(state, action) {
       return action.data;
     }
     case "CREATE": {
-      nextState = [action.data, ...data];
+      nextState = [action.data, ...state];
+      return nextState;
     }
     case "UPDATE": {
       nextState = state.map((item) =>
@@ -49,8 +62,8 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
-  const idRef = useRef(0);
+  const [data, dispatch] = useReducer(reducer, mockData);
+  const idRef = useRef(3);
 
   //dispatches
   const onCreate = (createdDate, title, content) => {
