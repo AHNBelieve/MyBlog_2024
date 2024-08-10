@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 export const PostStateContext = createContext();
 export const PostDispatchContext = createContext();
 
+// 적용 됐는지 확인!
 const mockData = [
   {
     id: 1,
