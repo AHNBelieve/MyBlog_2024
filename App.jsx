@@ -16,20 +16,20 @@ const mockData = [
   {
     id: 1,
     createdDate: new Date(),
-    title: "레츠고쇼!",
-    content: "응애",
+    title: "야스오는 최고야",
+    content: "첫 번째 포스트",
   },
   {
     id: 2,
     createdDate: new Date(),
-    title: "레츠고쇼!",
-    content: "응애",
+    title: "요네는 멋져",
+    content: "두 번째 포스트",
   },
   {
     id: 3,
     createdDate: new Date(),
-    title: "레츠고쇼!",
-    content: "응애",
+    title: "겐지는 벌레야",
+    content: "세 번째 포스트",
   },
 ];
 
@@ -95,7 +95,6 @@ function App() {
       id,
     });
   };
-
   return (
     <>
       <PostStateContext.Provider value={data}>
