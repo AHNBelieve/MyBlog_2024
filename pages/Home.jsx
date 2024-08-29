@@ -12,6 +12,7 @@ const Home = () => {
     <div>
       <Header></Header>
       <PostList data={data}></PostList>
+      <h1></h1>
       <button
         onClick={() => {
           nav("/new");

@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Post from "./pages/Post";
 import NotFound from "./pages/NotFound";
+import Edit from "./pages/Edit";
 
 export const PostStateContext = createContext();
 export const PostDispatchContext = createContext();
@@ -104,6 +105,7 @@ function App() {
             <Route path="/new" element={<New></New>} />
             <Route path="/post/:id" element={<Post></Post>} />
             <Route path="*" element={<NotFound></NotFound>} />
+            <Route path="/edit/:id" element={<Edit></Edit>} />
           </Routes>
         </PostDispatchContext.Provider>
       </PostStateContext.Provider>

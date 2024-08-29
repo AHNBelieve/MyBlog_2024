@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ initData, onSubmit }) => {
   const nav = useNavigate();
   const [input, setInput] = useState({
     createdDate: new Date(),
     title: "",
     content: "",
   });
+
+  useEffect(() => {
+    setInput({
+      ...initData,
+      createdDate: new Date(Number(initData.createdDate)),
+    });
+  }, [initData]);
+
   const onChangeInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -24,7 +32,6 @@ const Editor = ({ onSubmit }) => {
   return (
     <div className="Editor">
       <h1>제목</h1>
-      <h1>제목</h1>
       <input
         type="text"
         name="title"
@@ -33,7 +40,7 @@ const Editor = ({ onSubmit }) => {
       />
       <h2>내용</h2>
       <textarea name="content" value={input.content} onChange={onChangeInput} />
-      <button onClick={onClickSubmitButton}>만들기</button>
+      <button onClick={onClickSubmitButton}>저장</button>
     </div>
   );
 };
