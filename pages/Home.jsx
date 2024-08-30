@@ -8,10 +8,20 @@ const Home = () => {
   const data = useContext(PostStateContext);
   const nav = useNavigate();
 
+  const getFilteredData = (data, input) => {
+    console.log(input);
+    return data.filter((item) => {
+      return (
+        item.content.toLowerCase().includes(input.toLowerCase()) ||
+        item.title.toLowerCase().includes(input.toLowerCase())
+      );
+    });
+  };
+
   return (
     <div>
       <Header></Header>
-      <PostList data={data}></PostList>
+      <PostList getFilteredData={getFilteredData} data={data}></PostList>
       <h1></h1>
       <button
         onClick={() => {

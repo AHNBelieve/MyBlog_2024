@@ -10,10 +10,12 @@ const Editor = ({ initData, onSubmit }) => {
   });
 
   useEffect(() => {
-    setInput({
-      ...initData,
-      createdDate: new Date(Number(initData.createdDate)),
-    });
+    if (initData) {
+      setInput({
+        ...initData,
+        createdDate: new Date(Number(initData.createdDate)),
+      });
+    }
   }, [initData]);
 
   const onChangeInput = (e) => {
